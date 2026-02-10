@@ -20,7 +20,7 @@ export const Card: React.FC<Product> = (props) => {
             <br/>
             <p className="text-black"> {props.stock}</p>
             <p className="text-black">
-                {props.category}
+                {props.category.name}
             </p>
         </div>
     )
