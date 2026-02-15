@@ -1,6 +1,5 @@
-import { Product } from "@/components/Card/types";
 
-export const productsMock: Product[] = [
+export const productsMock = [
   {
     name: 'Iphone 15',
     description: 'The best smartphone in the world',
