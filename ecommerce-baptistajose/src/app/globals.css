@@ -28,7 +28,7 @@
 }
 
 body {
-  background: var(--background);
+  @apply bg-gradient-to-b from-slate-900 via-slate-800 to-black;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

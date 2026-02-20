@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 export const NavBar = () => {
@@ -15,15 +16,12 @@ export const NavBar = () => {
                 />
 
                 <ul className="hidden md:flex items-center gap-8 text-slate-300 text-lg font-medium">
-                    <li><a href="/home" className="anchor-navBar">Home</a></li>
-                    <li><a href="/dashboard" className="anchor-navBar">Dashboard</a></li>
+                    <li><Link href="/home" className="anchor-navBar">Home</Link></li>
+                    <li><Link href="/dashboard" className="anchor-navBar">Dashboard</Link></li>
                     <li>
-                        <a
-                            href="/cart"
-                            className="anchor-navBar"
-                        >
+                        <Link href="/cart" className="anchor-navBar">
                             Cart
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <button
@@ -36,11 +34,11 @@ export const NavBar = () => {
 
             {isOpen && (
                 <div className="md:hidden bg-slate-900 border-t border-white/10 px-6 py-6 space-y-6 text-slate-300 text-lg">
-                    <a href="/home" className="block hover:text-white">Home</a>
-                    <a href="/dashboard" className="block hover:text-white">Dashboard</a>
-                    <a href="/cart" className="block bg-blue-600 text-white px-4 py-2 rounded-xl text-center">
+                    <Link href="/home" className="block hover:text-white">Home</Link>
+                    <Link href="/dashboard" className="block hover:text-white">Dashboard</Link>
+                    <Link href="/cart" className="block bg-blue-600 text-white px-4 py-2 rounded-xl text-center">
                         Cart
-                    </a>
+                    </Link>
                 </div>
             )}
         </header>
