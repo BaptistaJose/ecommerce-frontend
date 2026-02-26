@@ -2,11 +2,11 @@ export const productsMock = [
   {
     id: 1,
     name: 'iPhone 15',
-    description: 'The best smartphone in the world',
+    description: 'Premium Apple smartphone',
     price: 199.99,
     stock: 12,
     category: 'smartphone',
-    imageUrl: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-finish-select-202309-6-7inch-natural'
+    imageUrl: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const productsMock = [
     price: 150.0,
     stock: 12,
     category: 'smartphone',
-    imageUrl: 'https://images.samsung.com/is/image/samsung/p6pim/levant/galaxy-s23/gallery/levant-galaxy-s23-s911-sm-s911bzgcmea-thumb-534863401'
+    imageUrl: 'https://images.unsplash.com/photo-1678911820864-e4b98d2f02b6?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const productsMock = [
     price: 179.89,
     stock: 12,
     category: 'smartphone',
-    imageUrl: 'https://motorolaus.vtexassets.com/arquivos/ids/156433/motorola-edge-40-neo-black-front-back'
+    imageUrl: 'https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const productsMock = [
     price: 299.99,
     stock: 12,
     category: 'monitor',
-    imageUrl: 'https://images.samsung.com/is/image/samsung/p6pim/levant/odyssey-g9-gallery'
+    imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const productsMock = [
     price: 199.99,
     stock: 12,
     category: 'monitor',
-    imageUrl: 'https://www.lg.com/us/images/monitors/md07519464/gallery/D-01'
+    imageUrl: 'https://images.unsplash.com/photo-1593642634367-d91a135587b5?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const productsMock = [
     price: 150.0,
     stock: 12,
     category: 'monitor',
-    imageUrl: 'https://www.acer.com/ac/en/US/content/model/UM.HX2AA.P02'
+    imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const productsMock = [
     price: 99.99,
     stock: 12,
     category: 'keyboard',
-    imageUrl: 'https://assets2.razerzone.com/images/pnx.assets/blackwidow-v3'
+    imageUrl: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const productsMock = [
     price: 79.99,
     stock: 12,
     category: 'keyboard',
-    imageUrl: 'https://assets.corsair.com/image/upload/f_auto,q_auto/k70-rgb-pro'
+    imageUrl: 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const productsMock = [
     price: 59.99,
     stock: 12,
     category: 'keyboard',
-    imageUrl: 'https://resource.logitechg.com/w_692,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-keyboard'
+    imageUrl: 'https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ export const productsMock = [
     price: 49.99,
     stock: 12,
     category: 'mouse',
-    imageUrl: 'https://assets2.razerzone.com/images/pnx.assets/razer-viper'
+    imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ export const productsMock = [
     price: 39.99,
     stock: 12,
     category: 'mouse',
-    imageUrl: 'https://resource.logitechg.com/w_692,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502-hero'
+    imageUrl: 'https://images.unsplash.com/photo-1586349906319-48d3f0c3e6e5?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 12,
@@ -105,6 +105,6 @@ export const productsMock = [
     price: 29.99,
     stock: 12,
     category: 'mouse',
-    imageUrl: 'https://media.steelseriescdn.com/thumbs/catalog/items/62513/steelseries-rival-3'
+    imageUrl: 'https://images.unsplash.com/photo-1605773527852-c546a8584ea3?q=80&w=800&auto=format&fit=crop'
   },
 ];
