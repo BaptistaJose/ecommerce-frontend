@@ -1,8 +1,10 @@
 import React from "react";
 import { CardProps } from "./types";
+import Link from "next/link";
 
 export const Card: React.FC<CardProps> = ({
-  imageUrl,
+  id,
+  imgUrl,
   name,
   description,
   price,
@@ -10,11 +12,12 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="w-full bg-slate-400 rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+      <Link href={`/product/${id}`}>      
       <img
-        src={imageUrl}
+        src={imgUrl}
         alt={name}
-        className="w-full h-32 sm:h-40 object-cover"
-      />
+        className="w-full h-32 sm:h-40 object-cover"/>
+      </Link>
       <div className="p-4 flex flex-col">
     
         <div>
@@ -37,3 +40,4 @@ export const Card: React.FC<CardProps> = ({
     </div>
   );
 };
+export default Card;

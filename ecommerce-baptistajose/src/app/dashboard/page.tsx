@@ -1,8 +1,10 @@
 import { Card } from "@/components/card/page";
-import { productsMock } from "@/utils/products.mock";
+import { getProducts } from "@/services/products";
+import { Product } from "@/types/product";
 import React from "react";
 
-export const Dashboard: React.FC = () => {
+export const Dashboard: React.FC = async() => {
+const products:Product[] =  await getProducts('1', '20')
     return (
         <main className="min-h-screen pb-5">
             <section className="max-w-7xl mx-auto">
@@ -11,8 +13,8 @@ export const Dashboard: React.FC = () => {
                 </h1>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-                    {productsMock.map((product) => (
-                        <Card key={product.id} {...product} />
+                    {products.map((product) => (
+                       <Card key={product.id} {...product} />
                     ))}
                 </div>
             </section>

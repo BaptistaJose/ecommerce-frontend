@@ -1,9 +1,12 @@
 import { Card } from "@/components/card/page"
-import { productsMock } from "@/utils/products.mock"
+import { getProducts } from "@/services/products"
+import { Product } from "@/types/product"
 import Link from "next/link"
 
-export const Home = () => {
-    const products = productsMock.slice(0, 4)
+export const Home = async () => {
+    const productsArray: Product[] = await getProducts() 
+    const products = productsArray.slice(0,4)
+
     return (
         <section className="flex flex-col min-h-screen px-6 md:px-12 lg:px-24">
             <div className="text-center mt-16 mb-14 max-w-4xl mx-auto">
@@ -28,13 +31,7 @@ export const Home = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10 mb-6">
                 {products.map(product => (
                     <div key={product.id}>
-                        <Card
-                            imageUrl={product.imageUrl}
-                            name={product.name}
-                            description={product.description}
-                            price={product.price}
-                            stock={product.stock}
-                        />
+                        <Card {...product}/>
                     </div>
                 ))}
             </div>

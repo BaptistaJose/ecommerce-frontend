@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="flex items-center min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-black">
+    <section className="flex items-center min-h-screen bg-linear-to-b from-slate-900 via-slate-800 to-black">
       <div className="container flex flex-col items-center gap-16 px-6 py-20 mx-auto lg:flex-row">
 
         <div className="flex justify-center flex-1 lg:justify-start">
           <div
             className="
               relative 
-              bg-gradient-to-br from-gray-700 to-gray-500
+              bg-linear-to-br from-gray-700 to-gray-500
               p-12
               max-w-xl
               text-white

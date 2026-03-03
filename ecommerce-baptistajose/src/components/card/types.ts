@@ -1,7 +1,5 @@
-export interface CardProps {
-  imageUrl: string;
-  name: string;
-  description: string;
-  price: number;
-  stock: number;
+import { Product } from "@/types/product";
+
+export interface CardProps extends Product {
+
 }
