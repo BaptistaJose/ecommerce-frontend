@@ -5,8 +5,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/services/auth";
 import { saveToken } from "@/utils/auth";
+import { useAuth } from "@/context/AuthContext";
 
 export const LoginPage = () => {
+    const { login } = useAuth()
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [serverError, setServerError] = useState<string | null>(null);
@@ -19,6 +21,7 @@ export const LoginPage = () => {
 
             const token = await loginUser(data);
             saveToken(token);
+            login();
             reset();
             router.push("/dashboard");
 

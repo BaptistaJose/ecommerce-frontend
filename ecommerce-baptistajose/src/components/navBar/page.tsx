@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { useAuth } from "@/context/AuthContext";
 
 export const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { logged, logout} = useAuth()
 
     return (
         <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-900/70 border-b border-white/10">
@@ -19,8 +21,14 @@ export const NavBar = () => {
                     <li><Link href="/home" className="anchor-navBar">Home</Link></li>
                     <li><Link href="/dashboard" className="anchor-navBar">Dashboard</Link></li>
                     <li><Link href="/cart" className="anchor-navBar">Cart</Link></li>
-                    <li><Link href="/login" className="anchor-navBar">Login</Link></li>
-                    <li><Link href="/register" className="anchor-navBar">Register</Link></li>
+                    {logged ? (
+                        <li><Link href="/login" className="anchor-navBar" onClick={logout}>Logout</Link></li>
+                    ) : (
+                        <>
+                        <li><Link href="/login" className="anchor-navBar">Login</Link></li>
+                        <li><Link href="/register" className="anchor-navBar">Register</Link></li>
+                        </>
+                    )}
                 </ul>
                 <button
                     className="md:hidden text-white text-3xl"
@@ -34,8 +42,14 @@ export const NavBar = () => {
                 <div className="md:hidden bg-slate-900 border-t border-white/10 px-6 py-6 space-y-6 text-slate-300 text-lg">
                     <Link href="/home" className="block hover:text-white">Home</Link>
                     <Link href="/dashboard" className="block hover:text-white">Dashboard</Link>
-                    <Link href="/login" className="block hover:text-white">Login</Link>
-                    <Link href="/register" className="block hover:text-white">Register</Link>
+                    {logged ? (
+                        <Link href="/login" className="block hover:text-white" onClick={logout}>Logout</Link>
+                    ) : (
+                        <>
+                        <Link href="/login" className="block hover:text-white">Login</Link>
+                        <Link href="/register" className="block hover:text-white">Register</Link>
+                        </>
+                    )}
                     <Link href="/cart" className="block bg-blue-600 text-white px-4 py-2 rounded-xl text-center">Cart</Link>
                 </div>
             )}
