@@ -25,7 +25,7 @@ export async function registerUser(data: inputRegister): Promise<RegisterRespons
 }
 
 
-export async function loginUser(data: inputLogin): Promise<string> {
+export async function loginUser(data: inputLogin) {
   const response =  await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signin`,{
     method: "POST",
     headers: {"Content-Type": "application/json"},

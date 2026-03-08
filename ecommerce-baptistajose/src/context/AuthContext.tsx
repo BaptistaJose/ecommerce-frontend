@@ -1,11 +1,14 @@
 "use client";
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { isAuthenticated, removeToken } from "@/utils/auth";
+import { removeAuthCookie } from "@/utils/cookies";
 
 type AuthContextType = {
-    logged: boolean;
-    login: () => void;
-    logout: () => void;
+  logged: boolean
+  user: any
+  login: () => void
+  logout: () => void
+  setUser: (userData: any) => void
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -13,9 +16,14 @@ const AuthContext = createContext<AuthContextType | null>(null);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const [logged, setLogged] = useState(false);
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     setLogged(isAuthenticated());
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
   }, []);
 
   const login = () => {
@@ -24,11 +32,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = () => {
     removeToken();
+    removeAuthCookie();
+    setUser(null);
     setLogged(false);
   };
 
   return (
-    <AuthContext.Provider value={{ logged, login, logout }}>
+    <AuthContext.Provider value={{ logged, user, login, logout, setUser }}>
       {children}
     </AuthContext.Provider>
   );

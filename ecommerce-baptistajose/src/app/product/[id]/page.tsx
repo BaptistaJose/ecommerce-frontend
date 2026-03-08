@@ -1,3 +1,4 @@
+import AddToCartButton from "@/components/cartButton/AddToCardButton";
 import { getProductById } from "@/services/products"
 import { notFound } from "next/navigation"
 
@@ -6,7 +7,6 @@ export default async function ProductDetail({ params }: { params: { id: string }
         const { id } = await params
         const product = await getProductById(id)
         return (
-            <section>
                 <section className="min-h-screen bg-slate-900 px-6 md:px-12 lg:px-24 py-16 text-white">
                     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div className="bg-slate-800 rounded-2xl p-6 flex items-center justify-center">
@@ -27,13 +27,10 @@ export default async function ProductDetail({ params }: { params: { id: string }
                                     {product.description}
                                 </p>
                             </div>
-                            <button className="mt-10 bg-blue-600 hover:bg-blue-700 transition py-3 rounded-xl font-medium">
-                                Add to Cart
-                            </button>
+                            <AddToCartButton {...product}/>
                         </div>
                     </div>
                 </section>
-            </section>
         )
     } catch (error) {
       notFound()

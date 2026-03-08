@@ -6,9 +6,11 @@ import { useRouter } from "next/navigation";
 import { loginUser } from "@/services/auth";
 import { saveToken } from "@/utils/auth";
 import { useAuth } from "@/context/AuthContext";
+import { setAuthCookie } from "@/utils/cookies";
+import { decodeToken } from "@/utils/decodeToken";
 
 export const LoginPage = () => {
-    const { login } = useAuth()
+    const { login, setUser } = useAuth()
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [serverError, setServerError] = useState<string | null>(null);
@@ -21,6 +23,10 @@ export const LoginPage = () => {
 
             const token = await loginUser(data);
             saveToken(token);
+            setAuthCookie(token)
+            const decodedToken = decodeToken(token)
+            setUser(decodedToken);
+            localStorage.setItem("user", JSON.stringify(decodedToken));
             login();
             reset();
             router.push("/dashboard");
