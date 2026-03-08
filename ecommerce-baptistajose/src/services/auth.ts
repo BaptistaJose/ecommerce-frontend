@@ -1,3 +1,4 @@
+import inputLogin from "@/app/login/types";
 import { inputRegister } from "@/app/register/types";
 
 export interface RegisterResponse {
@@ -21,4 +22,19 @@ export async function registerUser(data: inputRegister): Promise<RegisterRespons
   }
 
   return result;
+}
+
+
+export async function loginUser(data: inputLogin): Promise<string> {
+  const response =  await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signin`,{
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(data)
+  })
+
+  const result = await response.json()
+
+  if(!response.ok) throw new Error(result.message || "Login failed")
+  
+  return result.token;
 }
